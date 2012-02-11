@@ -2,4 +2,4 @@
 
 Clone this repo into ~/.dotfiles, then add the following line to `.bash_profile`:
 
-    source ~/.dotfiles/base.sh
+    source ~/.dotfiles/index.sh
