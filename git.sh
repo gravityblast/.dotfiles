@@ -10,5 +10,5 @@ git_prompt ()
  
   git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
  
-  echo " ($git_branch)"
+  echo "$git_branch"
 }
