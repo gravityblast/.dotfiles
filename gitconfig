@@ -1,0 +1,8 @@
+[user]
+	name = Andrea Franz
+	email = andrea@gravityblast.com
+[alias]
+	ci = commit
+	co = checkout
+	b = branch
+	st = status
