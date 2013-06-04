@@ -12,6 +12,7 @@ Bundle 'jnwhiteh/vim-golang'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-markdown'
+Bundle 'scrooloose/nerdtree'
 
 " load file type plugins + indentation
 filetype plugin indent on
@@ -51,4 +52,13 @@ set noswapfile
 " gui
 set ruler
 set cursorline
+set number
 
+" tab completion for files
+set wildmenu
+
+" always show the status line
+set laststatus=2
+
+" scrolling
+set scrolloff=5
