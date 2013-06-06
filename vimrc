@@ -13,12 +13,15 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 
 " load file type plugins + indentation
 filetype plugin indent on
 syntax on
 
 nnoremap <leader>c :nohlsearch<CR>
+nnoremap <leader>' :CtrlP<CR>
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
