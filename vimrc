@@ -15,6 +15,8 @@ Bundle 'tpope/vim-markdown'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'msanders/snipmate.vim'
 
 " load file type plugins + indentation
 filetype plugin indent on
@@ -39,7 +41,8 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 " Colorscheme
-colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
+colorscheme Tomorrow-Night-Eighties
 
 
 " remove trailing whitespace
