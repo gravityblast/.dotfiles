@@ -1,0 +1,9 @@
+require 'autotest/growl'
+require "autotest/bundler"
+
+Autotest::Growl::clear_terminal = false
+
+Autotest.add_hook :initialize do |autotest|
+  ['coverage', 'log', 'tmp', '.svn','.hg','.git', '.DS_Store'].each { |exception| autotest.add_exception(exception) }
+end
+
