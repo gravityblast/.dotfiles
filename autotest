@@ -4,6 +4,6 @@ require "autotest/bundler"
 Autotest::Growl::clear_terminal = false
 
 Autotest.add_hook :initialize do |autotest|
-  ['coverage', 'log', 'tmp', '.svn','.hg','.git', '.DS_Store'].each { |exception| autotest.add_exception(exception) }
+  ['coverage', 'log', 'tmp', '.svn','.hg','.git', '.DS_Store', 'public'].each { |exception| autotest.add_exception(exception) }
 end
 
