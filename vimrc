@@ -17,14 +17,13 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'msanders/snipmate.vim'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " load file type plugins + indentation
 filetype plugin indent on
 syntax on
 
 nnoremap <leader>c :nohlsearch<CR>
-nnoremap <leader>' :CtrlP<CR>
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -45,6 +44,20 @@ set smartcase                   " ... unless they contain at least one capital l
 " colorscheme Tomorrow-Night-Bright
 colorscheme Tomorrow-Night-Eighties
 
+" code folding
+set nofoldenable
+
+let perl_fold=1                           " perl folding
+let ruby_fold=1                           " ruby folding
+let javaScript_fold=1                     " javascript folding
+let g:xml_syntax_folding=1                " xml folding
+set foldmethod=syntax                     " fold using syntax checking
+set foldnestmax=5                         " max detpth of folding
+" code folding key-bindings:
+" zo - Open the fold on the same line as the cursor
+" zc - Close the fold that the cursor is inside
+" zR - Open all folds
+" zM - Close all folds
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
@@ -69,3 +82,9 @@ set laststatus=2
 
 " scrolling
 set scrolloff=5
+
+let g:Powerline_symbols = 'fancy'
+
+
+" Nerdtree
+map <F2> :NERDTreeToggle<CR>
