@@ -42,7 +42,8 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " Colorscheme
 " colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night-Eighties
+set background=dark
+colorscheme solarized
 
 " code folding
 set nofoldenable
