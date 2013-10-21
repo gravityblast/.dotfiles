@@ -17,7 +17,11 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'msanders/snipmate.vim'
+Bundle 'guns/vim-clojure-static'
+" Bundle 'bling/vim-airline'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+let g:airline_powerline_fonts = 1
 
 " load file type plugins + indentation
 filetype plugin indent on
@@ -42,7 +46,8 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " Colorscheme
 " colorscheme Tomorrow-Night-Bright
-colorscheme Tomorrow-Night-Eighties
+set background=dark
+colorscheme solarized
 
 " code folding
 set nofoldenable
@@ -76,6 +81,7 @@ set number
 
 " tab completion for files
 set wildmenu
+set wildmode=longest,list
 
 " always show the status line
 set laststatus=2
