@@ -16,7 +16,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'msanders/snipmate.vim'
+Bundle 'pilu/snipmate.vim'
+" Bundle 'Blackrush/vim-gocode'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " load file type plugins + indentation
