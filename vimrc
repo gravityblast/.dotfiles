@@ -18,7 +18,11 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'pilu/snipmate.vim'
 " Bundle 'Blackrush/vim-gocode'
+" Bundle 'guns/vim-clojure-static'
+" Bundle 'bling/vim-airline'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+let g:airline_powerline_fonts = 1
 
 " load file type plugins + indentation
 filetype plugin indent on
@@ -78,6 +82,7 @@ set number
 
 " tab completion for files
 set wildmenu
+set wildmode=longest,list
 
 " always show the status line
 set laststatus=2
