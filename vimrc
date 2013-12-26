@@ -16,7 +16,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'msanders/snipmate.vim'
+Bundle 'pilu/snipmate.vim'
 Bundle 'guns/vim-clojure-static'
 " Bundle 'bling/vim-airline'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
