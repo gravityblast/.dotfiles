@@ -17,7 +17,8 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'pilu/snipmate.vim'
-Bundle 'guns/vim-clojure-static'
+" Bundle 'Blackrush/vim-gocode'
+" Bundle 'guns/vim-clojure-static'
 " Bundle 'bling/vim-airline'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
