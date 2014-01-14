@@ -39,6 +39,16 @@ set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
+autocmd Filetype go setlocal noexpandtab
+autocmd Filetype go setlocal nolist
+
+" remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" highlight trailing whitespace
+set list listchars=trail:·,tab:>-
+
+
 " Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
@@ -64,12 +74,6 @@ set foldnestmax=5                         " max detpth of folding
 " zc - Close the fold that the cursor is inside
 " zR - Open all folds
 " zM - Close all folds
-
-" remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-
-" highlight trailing whitespace
-set list listchars=trail:·,tab:>-
 
 " backups and swapfiles
 set nobackup

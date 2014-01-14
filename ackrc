@@ -1,0 +1,5 @@
+--ignore-dir=log
+--ignore-dir=coverage
+--ignore-dir=tmp
+--ignore-dir=vcr_cassettes
+
