@@ -17,6 +17,11 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'pilu/snipmate.vim'
+Bundle 'vimoutliner/vimoutliner'
+Bundle "pangloss/vim-javascript"
+Bundle "junegunn/seoul256.vim"
+Bundle "tpope/vim-surround"
+Bundle "jgdavey/vim-turbux"
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'guns/vim-clojure-static'
 " Bundle 'bling/vim-airline'
@@ -57,6 +62,10 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " Colorscheme
 " colorscheme Tomorrow-Night-Bright
+
+" let g:seoul256_background = 234
+" colo seoul256
+
 set background=dark
 colorscheme solarized
 
