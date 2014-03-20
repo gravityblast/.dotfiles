@@ -22,8 +22,15 @@ Bundle "pangloss/vim-javascript"
 Bundle "junegunn/seoul256.vim"
 Bundle "tpope/vim-surround"
 Bundle "jgdavey/vim-turbux"
+Bundle "kien/rainbow_parentheses.vim"
+Bundle "guns/vim-clojure-static"
+Bundle "benmills/vimux-golang"
+Bundle "benmills/vimux"
+Bundle "vim-scripts/vim-jsbeautify"
+Bundle "jdonaldson/vaxe"
+Bundle "groenewege/vim-less"
+
 " Bundle 'Blackrush/vim-gocode'
-" Bundle 'guns/vim-clojure-static'
 " Bundle 'bling/vim-airline'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
@@ -96,6 +103,7 @@ set number
 " tab completion for files
 set wildmenu
 set wildmode=longest,list
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*     " MacOSX/Linux
 
 " always show the status line
 set laststatus=2
@@ -105,6 +113,13 @@ set scrolloff=5
 
 let g:Powerline_symbols = 'fancy'
 
-
 " Nerdtree
 map <F2> :NERDTreeToggle<CR>
+
+" Golang
+map <Leader>gr :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>gt :wa<CR> :GolangTestFocused<CR>
+
+" Ruby
+
+ab bp require 'pry'; binding.pry;
