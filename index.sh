@@ -4,10 +4,9 @@ source ~/.dotfiles/rvm.sh
 source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
+source ~/.dotfiles/go.sh
 
 export TERM=xterm-256color
 export CUCUMBER_COLORS=comment=cyan
 
-alias cdgo="cd ~/dev/projects/go/src/github.com/pilu"
-
-PS1='\[\e[0;32m\]\W\[\e[1;38m\]$(git_prompt): \[\e[0m\]'
+PS1='\u@\h \[\e[0;32m\]\W\[\e[1;38m\]$(git_prompt): \[\e[0m\]'

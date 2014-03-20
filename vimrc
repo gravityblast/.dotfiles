@@ -22,6 +22,8 @@ Bundle "pangloss/vim-javascript"
 Bundle "junegunn/seoul256.vim"
 Bundle "tpope/vim-surround"
 Bundle "jgdavey/vim-turbux"
+Bundle 'derekwyatt/vim-scala'
+
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'guns/vim-clojure-static'
 " Bundle 'bling/vim-airline'
@@ -63,11 +65,11 @@ set smartcase                   " ... unless they contain at least one capital l
 " Colorscheme
 " colorscheme Tomorrow-Night-Bright
 
-" let g:seoul256_background = 234
-" colo seoul256
+let g:seoul256_background = 234
+colo seoul256
 
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " code folding
 set nofoldenable
