@@ -29,6 +29,7 @@ Bundle "benmills/vimux"
 Bundle "vim-scripts/vim-jsbeautify"
 Bundle "jdonaldson/vaxe"
 Bundle "groenewege/vim-less"
+Bundle 'derekwyatt/vim-scala'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'
