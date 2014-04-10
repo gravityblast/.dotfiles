@@ -8,7 +8,9 @@ call vundle#rc()
 Bundle 'ack.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
-Bundle 'jnwhiteh/vim-golang'
+" Bundle 'jnwhiteh/vim-golang'
+Bundle "benmills/vimux-golang"
+Bundle "fatih/vim-go"
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-markdown'
@@ -24,7 +26,6 @@ Bundle "tpope/vim-surround"
 Bundle "jgdavey/vim-turbux"
 Bundle "kien/rainbow_parentheses.vim"
 Bundle "guns/vim-clojure-static"
-Bundle "benmills/vimux-golang"
 Bundle "benmills/vimux"
 Bundle "vim-scripts/vim-jsbeautify"
 Bundle "jdonaldson/vaxe"
@@ -118,8 +119,9 @@ let g:Powerline_symbols = 'fancy'
 map <F2> :NERDTreeToggle<CR>
 
 " Golang
-map <Leader>gr :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>gt :wa<CR> :GolangTestFocused<CR>
+map <Leader>grt :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>gt :wa<CR>  :GolangTestFocused<CR>
+map grun :w <CR>:call VimuxRunCommand("go run " . @%)
 
 " Ruby
 
