@@ -36,13 +36,18 @@ Bundle 'derekwyatt/vim-scala'
 " Bundle 'bling/vim-airline'
 " Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+augroup vimrcEx
+  autocmd!
+
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+augroup END
+
 let g:airline_powerline_fonts = 1
 
 " load file type plugins + indentation
 filetype plugin indent on
 syntax on
-
-nnoremap <leader>c :nohlsearch<CR>
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -68,6 +73,8 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+:nnoremap <CR> :nohlsearch<CR><CR>
 
 " Colorscheme
 " colorscheme Tomorrow-Night-Bright
@@ -118,11 +125,24 @@ let g:Powerline_symbols = 'fancy'
 " Nerdtree
 map <F2> :NERDTreeToggle<CR>
 
+" Rename current file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
 " Golang
-map <Leader>grt :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>gt :wa<CR>  :GolangTestFocused<CR>
+map <Leader>gt :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>grt :wa<CR>  :GolangTestFocused<CR>
 map grun :w <CR>:call VimuxRunCommand("go run " . @%)
 
 " Ruby
-
 ab bp require 'pry'; binding.pry;
+
+
