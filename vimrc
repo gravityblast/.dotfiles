@@ -82,7 +82,7 @@ set smartcase                   " ... unless they contain at least one capital l
 " let g:seoul256_background = 234
 " colo seoul256
 
-set background=dark
+set background=light
 colorscheme solarized
 
 " code folding
