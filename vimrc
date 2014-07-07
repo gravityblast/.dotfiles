@@ -49,6 +49,8 @@ let g:airline_powerline_fonts = 1
 filetype plugin indent on
 syntax on
 
+let mapleader=","
+
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 
@@ -110,8 +112,8 @@ set cursorline
 set number
 
 " tab completion for files
-set wildmenu
 set wildmode=longest,list
+set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*     " MacOSX/Linux
 
 " always show the status line
