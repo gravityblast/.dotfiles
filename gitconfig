@@ -6,7 +6,8 @@
 	co = checkout
 	b = branch
 	st = status
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	d = diff
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
     excludesfile = ~/.dotfiles/gitignore_global
     editor = /usr/bin/vim
