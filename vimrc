@@ -143,6 +143,7 @@ map <leader>n :call RenameFile()<cr>
 map <Leader>gt :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>grt :wa<CR>  :GolangTestFocused<CR>
 map grun :w <CR>:call VimuxRunCommand("go run " . @%)
+let g:go_fmt_command = "goimports"
 
 " Ruby
 ab bp require 'pry'; binding.pry;
