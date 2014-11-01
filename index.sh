@@ -5,6 +5,7 @@ source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
 source ~/.dotfiles/go.sh
+source ~/.dotfiles/ocaml.sh
 
 export TERM=xterm-256color
 export CUCUMBER_COLORS=comment=cyan

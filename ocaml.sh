@@ -1,0 +1,1 @@
+alias ocaml='rlwrap ocaml'
