@@ -8,3 +8,6 @@ And in your ~/.gitconfig:
 
 	[include]
 		path = ~/.dotfiles/gitconfig
+
+### Vim
+	git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
