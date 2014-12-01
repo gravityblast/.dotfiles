@@ -125,6 +125,9 @@ set scrolloff=5
 
 let g:Powerline_symbols = 'fancy'
 
+" autcomplete
+set completeopt-=preview
+
 " Nerdtree
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :TagbarToggle<CR>
