@@ -31,6 +31,7 @@ Bundle "vim-scripts/vim-jsbeautify"
 Bundle "jdonaldson/vaxe"
 Bundle "groenewege/vim-less"
 Bundle 'derekwyatt/vim-scala'
+Bundle 'majutsushi/tagbar'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'
@@ -125,7 +126,8 @@ set scrolloff=5
 let g:Powerline_symbols = 'fancy'
 
 " Nerdtree
-map <F2> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 
 " Rename current file
 function! RenameFile()
