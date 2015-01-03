@@ -32,6 +32,7 @@ Bundle "jdonaldson/vaxe"
 Bundle "groenewege/vim-less"
 Bundle 'derekwyatt/vim-scala'
 Bundle 'majutsushi/tagbar'
+Bundle 'wting/rust.vim'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'

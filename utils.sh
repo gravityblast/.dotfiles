@@ -1,1 +1,1 @@
-alias dns_flush='sudo killall -HUP mDNSResponder'
+alias dns_flush='sudo discoveryutil udnsflushcaches'
