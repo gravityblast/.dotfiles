@@ -1,0 +1,16 @@
+{{define "Cargo.toml"}}
+[package]
+
+name = "{{args 1}}"
+version = "0.0.1"
+authors = [ "Your name <you@example.com>" ]
+
+[[bin]]
+
+name = "{{args 1}}"
+{{end}}
+{{define "src/main.rs"}}
+fn main() {
+    println!("Hello World")
+}
+{{end}}
