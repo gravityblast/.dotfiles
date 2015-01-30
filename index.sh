@@ -10,4 +10,4 @@ source ~/.dotfiles/rvm.sh
 export TERM=xterm-256color
 export CUCUMBER_COLORS=comment=cyan
 
-PS1='\[\e[0;32m\]➜ \[\e[0;32m\]\W\[\e[1;38m\]$(git_prompt): \[\e[0m\]'
+PS1='\[\e[0;32m\]➜ \h:\[\e[0;32m\]\W\[\e[1;38m\]$(git_prompt): \[\e[0m\]'
