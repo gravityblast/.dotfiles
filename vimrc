@@ -33,6 +33,7 @@ Bundle "groenewege/vim-less"
 Bundle 'derekwyatt/vim-scala'
 Bundle 'majutsushi/tagbar'
 Bundle 'wting/rust.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'
