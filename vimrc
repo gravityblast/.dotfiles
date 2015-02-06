@@ -87,7 +87,7 @@ set smartcase                   " ... unless they contain at least one capital l
 " let g:seoul256_background = 234
 " colo seoul256
 
-set background=dark
+set background=light
 colorscheme solarized
 
 " code folding
@@ -117,7 +117,7 @@ set number
 " tab completion for files
 set wildmode=longest,list
 set wildmenu
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/*     " MacOSX/Linux
 
 " always show the status line
 set laststatus=2
