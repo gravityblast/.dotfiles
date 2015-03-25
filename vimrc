@@ -26,6 +26,9 @@ Bundle "tpope/vim-surround"
 Bundle "jgdavey/vim-turbux"
 Bundle "kien/rainbow_parentheses.vim"
 Bundle "guns/vim-clojure-static"
+Bundle "tpope/vim-fireplace"
+Bundle "tpope/vim-leiningen"
+Bundle "tpope/vim-classpath"
 Bundle "benmills/vimux"
 Bundle "vim-scripts/vim-jsbeautify"
 Bundle "jdonaldson/vaxe"
@@ -41,9 +44,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 augroup vimrcEx
   autocmd!
-
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
 augroup END
 
 let g:airline_powerline_fonts = 1
@@ -56,6 +57,8 @@ let mapleader=","
 
 set encoding=utf-8
 set showcmd                     " display incomplete commands
+set mouse=nvi
+set pastetoggle=<F4>
 
 " Whitespace
 set nowrap                      " don't wrap lines
@@ -115,8 +118,8 @@ set cursorline
 set number
 
 " tab completion for files
-set wildmode=longest,list
 set wildmenu
+set wildmode=longest:full,full
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/*     " MacOSX/Linux
 
 " always show the status line
@@ -155,4 +158,5 @@ let g:go_fmt_command = "goimports"
 " Ruby
 ab bp require 'pry'; binding.pry;
 
-
+" Eval
+map <Leader>e :w<CR>:%Eval<CR>
