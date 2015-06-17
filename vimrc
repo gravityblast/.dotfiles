@@ -37,6 +37,8 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'majutsushi/tagbar'
 Bundle 'wting/rust.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'vim-scripts/paredit.vim'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'
@@ -120,7 +122,7 @@ set number
 " tab completion for files
 set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/*     " MacOSX/Linux
+set wildignore+=*/target/*,*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/*     " MacOSX/Linux
 
 " always show the status line
 set laststatus=2
@@ -160,3 +162,4 @@ ab bp require 'pry'; binding.pry;
 
 " Eval
 map <Leader>e :w<CR>:%Eval<CR>
+
