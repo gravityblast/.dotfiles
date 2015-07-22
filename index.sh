@@ -6,6 +6,7 @@ source ~/.dotfiles/utils.sh
 source ~/.dotfiles/go.sh
 source ~/.dotfiles/ocaml.sh
 source ~/.dotfiles/rvm.sh
+source ~/.dotfiles/docker.sh
 
 export TERM=xterm-256color
 export CUCUMBER_COLORS=comment=cyan
