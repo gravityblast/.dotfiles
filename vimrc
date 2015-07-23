@@ -163,3 +163,5 @@ ab bp require 'pry'; binding.pry;
 " Eval
 map <Leader>e :w<CR>:%Eval<CR>
 
+" allow buffers to be hidden without saving
+set hidden
