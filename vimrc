@@ -39,6 +39,7 @@ Bundle 'wting/rust.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'vim-scripts/paredit.vim'
+Bundle 'scrooloose/syntastic'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'
@@ -164,3 +165,23 @@ ab bp require 'pry'; binding.pry;
 map <Leader>e :w<CR>:%Eval<CR>
 
 :set timeout timeoutlen=5000 ttimeoutlen=100
+
+" allow buffers to be hidden without saving
+" set hidden
+
+if has('persistent_undo')      "check if your vim version supports it
+  set undofile                 "turn on the feature
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ['go', 'govet', 'golint']
+>>>>>>> add scrooloose/syntastic to vimrc
