@@ -165,3 +165,5 @@ map <Leader>e :w<CR>:%Eval<CR>
 
 " allow buffers to be hidden without saving
 set hidden
+
+:set timeout timeoutlen=5000 ttimeoutlen=100
