@@ -154,7 +154,7 @@ map <leader>n :call RenameFile()<cr>
 " Golang
 map <Leader>gt :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>grt :wa<CR>  :GolangTestFocused<CR>
-map grun :w <CR>:call VimuxRunCommand("go run " . @%)
+map grun :w <CR>:call VimuxRunCommand("go run " . @%)<CR>
 let g:go_fmt_command = "goimports"
 
 " Ruby
