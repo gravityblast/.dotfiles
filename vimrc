@@ -153,8 +153,8 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Golang
-map <Leader>gt :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>grt :wa<CR>  :GolangTestFocused<CR>
+map <Leader>rt :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>ra :wa<CR>  :GolangTestFocused<CR>
 map grun :w <CR>:call VimuxRunCommand("go run " . @%)
 let g:go_fmt_command = "goimports"
 
@@ -178,10 +178,12 @@ endif
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=%f
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['go', 'govet', 'golint']
->>>>>>> add scrooloose/syntastic to vimrc
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+map ss :SyntasticCheck<CR>
