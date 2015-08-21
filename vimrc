@@ -39,6 +39,7 @@ Bundle 'wting/rust.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'vim-scripts/paredit.vim'
+Bundle 'scrooloose/syntastic'
 
 " Bundle 'Blackrush/vim-gocode'
 " Bundle 'bling/vim-airline'
@@ -152,8 +153,8 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Golang
-map <Leader>gt :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>grt :wa<CR>  :GolangTestFocused<CR>
+map <Leader>rt :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>ra :wa<CR>  :GolangTestFocused<CR>
 map grun :w <CR>:call VimuxRunCommand("go run " . @%)<CR>
 let g:go_fmt_command = "goimports"
 
@@ -164,3 +165,25 @@ ab bp require 'pry'; binding.pry;
 map <Leader>e :w<CR>:%Eval<CR>
 
 :set timeout timeoutlen=5000 ttimeoutlen=100
+
+" allow buffers to be hidden without saving
+" set hidden
+
+if has('persistent_undo')      "check if your vim version supports it
+  set undofile                 "turn on the feature
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+endif
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=%f
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ['go', 'govet', 'golint']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+map ss :SyntasticCheck<CR>
