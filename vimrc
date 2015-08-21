@@ -153,8 +153,8 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Golang
-map <Leader>rt :wa<CR> :GolangTestCurrentPackage<CR>
-map <Leader>ra :wa<CR>  :GolangTestFocused<CR>
+map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
+map <Leader>rt :wa<CR> :GolangTestFocused<CR>
 map grun :w <CR>:call VimuxRunCommand("go run " . @%)<CR>
 let g:go_fmt_command = "goimports"
 
