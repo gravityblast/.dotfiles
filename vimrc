@@ -38,7 +38,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'wting/rust.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'vim-scripts/paredit.vim'
+" Bundle 'vim-scripts/paredit.vim'
 Bundle 'scrooloose/syntastic'
 
 " Bundle 'Blackrush/vim-gocode'
@@ -153,8 +153,8 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Golang
-map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
 map <Leader>rt :wa<CR> :GolangTestFocused<CR>
+map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
 map grun :w <CR>:call VimuxRunCommand("go run " . @%)<CR>
 let g:go_fmt_command = "goimports"
 
@@ -175,10 +175,10 @@ if has('persistent_undo')      "check if your vim version supports it
 endif
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-set statusline+=%f
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%f
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
