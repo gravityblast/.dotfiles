@@ -1,1 +1,1 @@
-alias dns_flush='sudo discoveryutil udnsflushcaches'
+alias dns_flush='sudo dscacheutil -flushcache'
