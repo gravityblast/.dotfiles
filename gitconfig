@@ -1,13 +1,15 @@
 [user]
-	name = Andrea Franz
-	email = andrea@gravityblast.com
+  name = Andrea Franz
+  email = andrea@gravityblast.com
 [alias]
-	ci = commit
-	co = checkout
-	b = branch
-	st = status
-	d = diff
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ci = commit
+  co = checkout
+  b = branch
+  st = status
+  d = diff
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
-    excludesfile = ~/.dotfiles/gitignore_global
-    editor = /usr/bin/vim
+  excludesfile = ~/.dotfiles/gitignore_global
+  editor = /usr/bin/vim
+[push]
+  default = simple
