@@ -1,52 +1,58 @@
 set nocompatible                " choose no compatibility with legacy vi
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Bundle 'ack.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails.git'
-" Bundle 'jnwhiteh/vim-golang'
-Bundle "benmills/vimux-golang"
-Bundle "fatih/vim-go"
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-markdown'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'pilu/snipmate.vim'
-Bundle 'vimoutliner/vimoutliner'
-Bundle "pangloss/vim-javascript"
-Bundle "junegunn/seoul256.vim"
-Bundle "tpope/vim-surround"
-Bundle "jgdavey/vim-turbux"
-Bundle "kien/rainbow_parentheses.vim"
-Bundle "guns/vim-clojure-static"
-Bundle "tpope/vim-fireplace"
-Bundle "tpope/vim-leiningen"
-Bundle "tpope/vim-classpath"
-Bundle "benmills/vimux"
-Bundle "vim-scripts/vim-jsbeautify"
-Bundle "jdonaldson/vaxe"
-Bundle "groenewege/vim-less"
-Bundle 'derekwyatt/vim-scala'
-Bundle 'majutsushi/tagbar'
-Bundle 'wting/rust.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'mustache/vim-mustache-handlebars'
-" Bundle 'vim-scripts/paredit.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'dhruvasagar/vim-table-mode'
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'mattreduce/vim-mix'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ack.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails.git'
+" Plugin 'jnwhiteh/vim-golang'
+Plugin 'benmills/vimux-golang'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'pilu/snipmate.vim'
+Plugin 'vimoutliner/vimoutliner'
+Plugin 'pangloss/vim-javascript'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'jgdavey/vim-turbux'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-classpath'
+Plugin 'benmills/vimux'
+Plugin 'vim-scripts/vim-jsbeautify'
+Plugin 'jdonaldson/vaxe'
+Plugin 'groenewege/vim-less'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'majutsushi/tagbar'
+Plugin 'wting/rust.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'vim-scripts/paredit.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'mattreduce/vim-mix'
+Plugin 'pilu/vimux-elixir'
 
-" Bundle 'Blackrush/vim-gocode'
-" Bundle 'bling/vim-airline'
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Blackrush/vim-gocode'
+" Plugin 'bling/vim-airline'
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 augroup vimrcEx
   autocmd!
@@ -156,11 +162,6 @@ endfunction
 map <leader>n :call RenameFile()<cr>
 
 " Golang
-map <Leader>rt :wa<CR> :GolangTestFocused<CR>
-map <Leader>ra :wa<CR> :GolangTestCurrentPackage<CR>
-map grun :w <CR>:call VimuxRunCommand("go run " . @%)<CR>
-let g:go_fmt_command = "goimports"
-
 " Ruby
 ab bp require 'pry'; binding.pry;
 
