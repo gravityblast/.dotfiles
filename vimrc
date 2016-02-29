@@ -41,7 +41,7 @@ Plugin 'wting/rust.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'vim-scripts/paredit.vim'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
@@ -102,7 +102,7 @@ set smartcase                   " ... unless they contain at least one capital l
 " let g:seoul256_background = 234
 " colo seoul256
 
-set background=dark
+set background=light
 colorscheme solarized
 
 " code folding
