@@ -87,6 +87,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 " highlight trailing whitespace
 set list listchars=trail:·,tab:>-
 
+" Copy selection to clipboard
+vnoremap <Leader>c "+y
 
 " Searching
 set hlsearch                    " highlight matches
