@@ -146,6 +146,7 @@ let g:Powerline_symbols = 'fancy'
 
 " autcomplete
 set completeopt-=preview
+set complete-=i
 
 " Nerdtree
 nmap <F2> :NERDTreeToggle<CR>
