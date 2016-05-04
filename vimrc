@@ -134,7 +134,7 @@ set number
 " tab completion for files
 set wildmenu
 set wildmode=longest:full,full
-set wildignore+=*/target/*,*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/*     " MacOSX/Linux
+set wildignore+=*/target/*,*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/,*/node_modules/*     " MacOSX/Linux
 
 " always show the status line
 set laststatus=2
