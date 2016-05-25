@@ -18,7 +18,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-markdown'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'pilu/snipmate.vim'
 Plugin 'vimoutliner/vimoutliner'
@@ -194,3 +194,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['go', 'govet', 'golint']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 map ss :SyntasticCheck<CR>
+
+let g:ctrlp_working_path_mode = 'w'
