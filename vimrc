@@ -41,11 +41,11 @@ Plugin 'wting/rust.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'vim-scripts/paredit.vim'
-" Plugin 'scrooloose/syntastic'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
 Plugin 'pilu/vimux-elixir'
+Plugin 'ElmCast/elm-vim'
 
 " Plugin 'Blackrush/vim-gocode'
 " Plugin 'bling/vim-airline'
@@ -164,7 +164,6 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 
-" Golang
 " Ruby
 ab bp require 'pry'; binding.pry;
 
@@ -181,18 +180,9 @@ if has('persistent_undo')      "check if your vim version supports it
   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 endif
 
-" syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%f
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_go_checkers = ['go', 'govet', 'golint']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
-map ss :SyntasticCheck<CR>
-
 let g:ctrlp_working_path_mode = 'w'
+
+" elm
+au FileType elm nmap <leader>m <Plug>(elm-make)
+au FileType elm nmap <leader>b <Plug>(elm-browse-docs)
+au FileType elm nmap <leader>d <Plug>(elm-show-docs)
