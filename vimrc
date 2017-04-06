@@ -37,7 +37,6 @@ Plugin 'jdonaldson/vaxe'
 Plugin 'groenewege/vim-less'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'majutsushi/tagbar'
-Plugin 'wting/rust.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mustache/vim-mustache-handlebars'
 " Plugin 'vim-scripts/paredit.vim'
@@ -46,6 +45,10 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
 Plugin 'pilu/vimux-elixir'
 Plugin 'ElmCast/elm-vim'
+Plugin 'slashmili/alchemist.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'mattn/emmet-vim'
 
 " Plugin 'Blackrush/vim-gocode'
 " Plugin 'bling/vim-airline'
@@ -104,7 +107,7 @@ set smartcase                   " ... unless they contain at least one capital l
 " let g:seoul256_background = 234
 " colo seoul256
 
-set background=light
+set background=dark
 colorscheme solarized
 
 " code folding
@@ -184,5 +187,11 @@ let g:ctrlp_working_path_mode = 'w'
 
 " elm
 au FileType elm nmap <leader>m <Plug>(elm-make)
-au FileType elm nmap <leader>b <Plug>(elm-browse-docs)
+au FileType elm nmap <leader>w <Plug>(elm-browse-docs)
 au FileType elm nmap <leader>d <Plug>(elm-show-docs)
+au FileType elm nmap <leader>e <Plug>(elm-error-detail)
+au BufWritePost *.elm ElmMake
+au Filetype elm set tabstop=4 softtabstop=4 shiftwidth=4
+
+let g:elm_format_autosave = 1
+" au BufWritePost *.elm ElmMakeFile("Main.elm")
