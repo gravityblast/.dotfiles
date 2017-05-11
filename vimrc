@@ -32,6 +32,9 @@ Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
+" backups and swapfiles
+set nobackup
+set noswapfile
 
 filetype plugin indent on
 syntax enable
@@ -125,7 +128,7 @@ if has('persistent_undo')      "check if your vim version supports it
   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 endif
 
-let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_working_path_mode = 'a'
 
 " Elm
 au FileType elm nmap <leader>m <Plug>(elm-make)

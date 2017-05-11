@@ -2,3 +2,4 @@
 *.swp
 *.pyc
 .powenv
+/tags
