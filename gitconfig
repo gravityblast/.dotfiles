@@ -11,7 +11,7 @@
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
   excludesfile = ~/.dotfiles/gitignore_global
-  editor = /usr/bin/vim
+	editor = nvim
 [push]
   default = simple
 [status]
