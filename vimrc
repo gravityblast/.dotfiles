@@ -29,6 +29,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'scrooloose/syntastic'
 Plug 'kchmck/vim-coffee-script'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -161,3 +162,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" vim-jsx
+let g:jsx_ext_required = 0
+

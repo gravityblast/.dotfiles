@@ -4,7 +4,6 @@ source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
 source ~/.dotfiles/go.sh
-source ~/.dotfiles/ocaml.sh
 source ~/.dotfiles/rvm.sh
 source ~/.dotfiles/docker.sh
 source ~/.asdf/asdf.sh
