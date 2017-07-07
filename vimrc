@@ -174,4 +174,4 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " reason
 " autocmd FileType reason map <buffer> <D-M> :ReasonPrettyPrint<Cr>
-autocmd BufWritePost,FileWritePost *.re execute 'ReasonPrettyPrint'
+autocmd BufWritePre *.re execute 'ReasonPrettyPrint'
