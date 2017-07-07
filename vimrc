@@ -30,6 +30,7 @@ Plug 'ElmCast/elm-vim'
 Plug 'scrooloose/syntastic'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
+Plug 'reasonml/vim-reason'
 
 call plug#end()
 
@@ -166,3 +167,11 @@ let g:syntastic_check_on_wq = 0
 " vim-jsx
 let g:jsx_ext_required = 0
 
+
+" ocaml
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+
+" reason
+" autocmd FileType reason map <buffer> <D-M> :ReasonPrettyPrint<Cr>
+autocmd BufWritePost,FileWritePost *.re execute 'ReasonPrettyPrint'
