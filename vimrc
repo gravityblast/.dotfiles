@@ -1,8 +1,3 @@
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'Shougo/deoplete.nvim'
@@ -12,7 +7,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-surround'
@@ -23,6 +17,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'pilu/snipmate.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/goyo.vim'
@@ -31,6 +26,15 @@ Plug 'scrooloose/syntastic'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 Plug 'reasonml/vim-reason'
+Plug 'OmniSharp/omnisharp-vim'
+" Plug 'prettier/vim-prettier', {
+" 	\ 'do': 'yarn install',
+" 	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+Plug 'fatih/vim-go'
+
+" colorschemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
@@ -50,15 +54,10 @@ set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " let g:deoplete#enable_at_startup = 1
 
 " remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
-
-autocmd Filetype go setlocal noexpandtab
-autocmd Filetype go setlocal nolist
 
 " highlight trailing whitespace
 set list listchars=trail:·,tab:>-
@@ -74,10 +73,11 @@ set smartcase                   " ... unless they contain at least one capital l
 
 :nnoremap <CR> :nohlsearch<CR><CR>
 
-" Colorscheme
+" colorscheme
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=light
 colorscheme solarized
-"
+
 " code folding
 set nofoldenable
 
@@ -100,11 +100,12 @@ set scrolloff=5
 "" autcomplete
 "set completeopt-=preview
 "set complete-=i
-"
+autocmd CompleteDone * pclose
+
 " Nerdtree
 nmap <F2> :NERDTreeToggle<CR>
 nmap <F3> :TagbarToggle<CR>
-"
+
 " Rename current file
 function! RenameFile()
     let old_name = expand('%')
@@ -141,7 +142,6 @@ au FileType elm nmap <leader>e <Plug>(elm-error-detail)
 au Filetype elm set tabstop=4 softtabstop=4 shiftwidth=4
 "
 let g:elm_format_autosave = 1
-"" au BufWritePost *.elm ElmMakeFile("Main.elm")
 
 " snippets
 imap <expr><TAB>
@@ -149,10 +149,7 @@ imap <expr><TAB>
  \ neosnippet#expandable_or_jumpable() ?
  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+let g:neosnippet#enable_snipmate_compatibility = 1
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -167,7 +164,6 @@ let g:syntastic_check_on_wq = 0
 " vim-jsx
 let g:jsx_ext_required = 0
 
-
 " ocaml
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
@@ -175,3 +171,13 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 " reason
 " autocmd FileType reason map <buffer> <D-M> :ReasonPrettyPrint<Cr>
 autocmd BufWritePre *.re execute 'ReasonPrettyPrint'
+
+" prettier
+" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+" let g:prettier#config#trailing_comma = 'none'
+
+" golang
+autocmd Filetype go setlocal noexpandtab
+autocmd Filetype go setlocal nolist
+let g:go_fmt_command = "goimports"
+
