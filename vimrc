@@ -6,7 +6,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-surround'
@@ -27,14 +26,19 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 Plug 'reasonml/vim-reason'
 Plug 'OmniSharp/omnisharp-vim'
-" Plug 'prettier/vim-prettier', {
-" 	\ 'do': 'yarn install',
-" 	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+Plug 'prettier/vim-prettier', {
+	\ 'do': 'yarn install',
+	\ 'for': ['javascript', 'typescript', 'json', 'graphql'] }
 Plug 'fatih/vim-go'
+Plug 'pangloss/vim-javascript'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'radenling/vim-dispatch-neovim'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -173,11 +177,15 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 autocmd BufWritePre *.re execute 'ReasonPrettyPrint'
 
 " prettier
-" autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
-" let g:prettier#config#trailing_comma = 'none'
+autocmd BufWritePre *.js,*.json,*.graphql Prettier
+let g:prettier#config#trailing_comma = 'none'
 
 " golang
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype go setlocal nolist
 let g:go_fmt_command = "goimports"
 
+" FZF
+nnoremap <C-p> :FZF<CR>
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
