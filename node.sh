@@ -1,2 +1,7 @@
-export NODE_PATH=/usr/local/lib/node_modules:/usr/local/share/npm/lib/node_modules/;
-export PATH=$PATH:/usr/local/share/npm/bin
+lazy_source () {
+    eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
+}
+
+export NVM_DIR="$HOME/.nvm"
+lazy_source nvm "/usr/local/opt/nvm/nvm.sh"
+# . "/usr/local/opt/nvm/nvm.sh"

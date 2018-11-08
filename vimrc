@@ -1,6 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/deoplete.nvim'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'mdempsky/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
@@ -17,28 +19,36 @@ Plug 'slashmili/alchemist.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'pilu/snipmate.vim'
-Plug 'Shougo/denite.nvim'
+" Plug 'Shougo/denite.nvim'
 Plug 'mhinz/vim-startify'
-Plug 'junegunn/goyo.vim'
 Plug 'ElmCast/elm-vim'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
-Plug 'reasonml/vim-reason'
-Plug 'OmniSharp/omnisharp-vim'
-Plug 'prettier/vim-prettier', {
-	\ 'do': 'yarn install',
-	\ 'for': ['javascript', 'typescript', 'json', 'graphql'] }
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'tomlion/vim-solidity'
+
+
+" Plug 'OmniSharp/omnisharp-vim'
+" Plug 'prettier/vim-prettier', {
+" 	\ 'do': 'yarn install',
+" 	\ 'for': ['javascript', 'typescript', 'json', 'graphql'] }
+
+" Plug 'w0rp/ale'
+
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-dispatch'
-Plug 'radenling/vim-dispatch-neovim'
+Plug 'majutsushi/tagbar'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'chriskempson/base16-vim'
+Plug 'nightsense/vimspectr'
+
 
 call plug#end()
 
@@ -78,9 +88,12 @@ set smartcase                   " ... unless they contain at least one capital l
 :nnoremap <CR> :nohlsearch<CR><CR>
 
 " colorscheme
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=light
-colorscheme solarized
+" colorscheme base16-apathy
+colorscheme base16-solarized-light
+" colorscheme base16-harmonic-dark
+set termguicolors
 
 " code folding
 set nofoldenable
@@ -105,6 +118,11 @@ set scrolloff=5
 "set completeopt-=preview
 "set complete-=i
 autocmd CompleteDone * pclose
+
+" Tab navigation
+nnoremap th :tabprev<CR>
+nnoremap tl :tabnext<CR>
+nnoremap tn :tabnew<CR>
 
 " Nerdtree
 nmap <F2> :NERDTreeToggle<CR>
@@ -156,14 +174,14 @@ imap <expr><TAB>
 let g:neosnippet#enable_snipmate_compatibility = 1
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " vim-jsx
 let g:jsx_ext_required = 0
@@ -177,8 +195,8 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 autocmd BufWritePre *.re execute 'ReasonPrettyPrint'
 
 " prettier
-autocmd BufWritePre *.js,*.json,*.graphql Prettier
-let g:prettier#config#trailing_comma = 'none'
+" autocmd BufWritePre *.js,*.json,*.graphql Prettier
+" let g:prettier#config#trailing_comma = 'none'
 
 " golang
 autocmd Filetype go setlocal noexpandtab
@@ -189,3 +207,9 @@ let g:go_fmt_command = "goimports"
 nnoremap <C-p> :FZF<CR>
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+" Airline
+let g:airline_theme='base16'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+

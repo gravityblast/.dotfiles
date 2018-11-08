@@ -4,8 +4,10 @@ source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
 source ~/.dotfiles/go.sh
-source ~/.dotfiles/rvm.sh
+# source ~/.dotfiles/rvm.sh
 source ~/.dotfiles/docker.sh
+source ~/.dotfiles/gpg.sh
+source ~/.dotfiles/geth.sh
 source ~/.asdf/asdf.sh
 
 export TERM=xterm-256color
@@ -14,7 +16,7 @@ export TERM=xterm-256color
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/pilu/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -97,3 +99,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias cds="cd $GOPATH/src/github.com/status-im"
