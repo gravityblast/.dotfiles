@@ -12,3 +12,7 @@ network-manager-applet
 volumeicon
 i3exit
 noto-fonts-emoji
+thunar
+redshift
+chromium
+dunst
