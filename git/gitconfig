@@ -10,7 +10,7 @@
   d = diff
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
-  excludesfile = ~/.dotfiles/gitignore_global
+  excludesfile = ~/.dotfiles/git/gitignore_global
 	editor = nvim
 [push]
   default = simple
