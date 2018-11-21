@@ -1,4 +1,4 @@
-sudo pacman -Sy --noconfirm `cat packages.txt | grep -v ^#`
+sudo pacman -Sy --noconfirm --needed `cat packages.txt | grep -v ^#`
 
 DOT_FILES=$HOME/.dotfiles
 
