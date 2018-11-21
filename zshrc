@@ -1,5 +1,5 @@
-source ~/.dotfiles/git.sh
-source ~/.dotfiles/postgres.sh
+source ~/.dotfiles/git/git.sh
+#source ~/.dotfiles/postgres.sh
 source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
@@ -8,7 +8,8 @@ source ~/.dotfiles/go.sh
 source ~/.dotfiles/docker.sh
 source ~/.dotfiles/gpg.sh
 source ~/.dotfiles/geth.sh
-source ~/.asdf/asdf.sh
+source ~/.dotfiles/fzf.sh
+#source ~/.asdf/asdf.sh
 
 export TERM=xterm-256color
 
@@ -97,8 +98,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-alias cds="cd $GOPATH/src/github.com/status-im"

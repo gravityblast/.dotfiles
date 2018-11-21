@@ -187,8 +187,8 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:jsx_ext_required = 0
 
 " ocaml
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
+" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+" execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " reason
 " autocmd FileType reason map <buffer> <D-M> :ReasonPrettyPrint<Cr>

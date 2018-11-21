@@ -1,0 +1,10 @@
+#base-devel
+#zsh
+#dmenu
+#git
+#neovim
+#cowsay
+#go
+#ack
+fzf
+ripgrep
