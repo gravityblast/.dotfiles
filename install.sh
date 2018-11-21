@@ -38,3 +38,6 @@ DOT_FILES=$HOME/.dotfiles
 #rm -f $HOME/.Xresources.bak
 #mv $HOME/.Xresources $HOME/.Xresources.bak
 #ln -s $DOT_FILES/Xresources $HOME/.Xresources
+
+rm -f $HOME/.config/i3status
+ln -s $DOT_FILES/config/i3status/ $HOME/.config
