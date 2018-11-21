@@ -24,10 +24,17 @@ DOT_FILES=$HOME/.dotfiles
 #nvim +silent +GoInstallBinaries +qall
 
 # node
-rm -rf $HOME/.nvm
-export NVM_DIR="$HOME/.nvm" && (
-  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
-  cd "$NVM_DIR"
-  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-) && \. "$NVM_DIR/nvm.sh"
-nvm install node
+#rm -rf $HOME/.nvm
+#export NVM_DIR="$HOME/.nvm" && (
+#  git clone https://github.com/creationix/nvm.git "$NVM_DIR"
+#  cd "$NVM_DIR"
+#  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+#) && \. "$NVM_DIR/nvm.sh"
+#nvm install node
+
+#rm -rf $HOME/.config/i3
+#ln -s $DOT_FILES/config/i3/ $HOME/.config
+
+#rm -f $HOME/.Xresources.bak
+#mv $HOME/.Xresources $HOME/.Xresources.bak
+#ln -s $DOT_FILES/Xresources $HOME/.Xresources
