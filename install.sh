@@ -41,3 +41,6 @@ DOT_FILES=$HOME/.dotfiles
 
 rm -f $HOME/.config/i3status
 ln -s $DOT_FILES/config/i3status/ $HOME/.config
+
+rm -f $HOME/.config/dunst
+ln -s $DOT_FILES/config/dunst/ $HOME/.config
