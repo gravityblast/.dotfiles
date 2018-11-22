@@ -4,6 +4,7 @@ chromium
 cowsay
 dmenu
 dunst
+feh
 fzf
 git
 gnupg
