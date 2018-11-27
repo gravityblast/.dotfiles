@@ -220,6 +220,7 @@ bindsym $mod+Print exec xfce4-screenshooter
 
 # Processes
 exec --no-startup-id nm-applet
+
 #
 # Background image
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg

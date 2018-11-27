@@ -77,6 +77,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 set list listchars=trail:·,tab:>-
 
 " Copy selection to clipboard
+set clipboard+=unnamedplus
 vnoremap <Leader>c "+y
 
 " Searching
