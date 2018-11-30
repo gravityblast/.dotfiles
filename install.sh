@@ -45,8 +45,13 @@ DOT_FILES=$HOME/.dotfiles
 # rm -f $HOME/.config/dunst
 # ln -s $DOT_FILES/config/dunst/ $HOME/.config
 
-# systemctl --user enable redshift-gtk.service
+systemctl --user enable redshift.service
 
 # ssh-agent
 mkdir -p $HOME/.config/systemd/user/default.target.wants/
+rm -f $HOME/.config/systemd/user/default.target.wants/ssh-agent.service
 ln -s $DOT_FILES/config/systemd/user/default.target.wants/ssh-agent.service $HOME/.config/systemd/user/default.target.wants/ssh-agent.service
+
+# redshit
+rm -rf $HOME/.config/redshift
+ln -s $DOT_FILES/config/redshift $HOME/.config
