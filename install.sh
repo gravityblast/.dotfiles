@@ -44,3 +44,5 @@ ln -s $DOT_FILES/config/i3status/ $HOME/.config
 
 rm -f $HOME/.config/dunst
 ln -s $DOT_FILES/config/dunst/ $HOME/.config
+
+systemctl --user enable redshift-gtk.service
