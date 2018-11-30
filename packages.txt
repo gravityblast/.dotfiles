@@ -16,6 +16,7 @@ network-manager-applet
 noto-fonts-emoji
 playerctl
 redshift
+redshift-gtk
 ripgrep
 thunar
 volumeicon
