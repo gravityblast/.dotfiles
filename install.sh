@@ -39,10 +39,14 @@ DOT_FILES=$HOME/.dotfiles
 #mv $HOME/.Xresources $HOME/.Xresources.bak
 #ln -s $DOT_FILES/Xresources $HOME/.Xresources
 
-rm -f $HOME/.config/i3status
-ln -s $DOT_FILES/config/i3status/ $HOME/.config
+# rm -f $HOME/.config/i3status
+# ln -s $DOT_FILES/config/i3status/ $HOME/.config
 
-rm -f $HOME/.config/dunst
-ln -s $DOT_FILES/config/dunst/ $HOME/.config
+# rm -f $HOME/.config/dunst
+# ln -s $DOT_FILES/config/dunst/ $HOME/.config
 
-systemctl --user enable redshift-gtk.service
+# systemctl --user enable redshift-gtk.service
+
+# ssh-agent
+mkdir -p $HOME/.config/systemd/user/default.target.wants/
+ln -s $DOT_FILES/config/systemd/user/default.target.wants/ssh-agent.service $HOME/.config/systemd/user/default.target.wants/ssh-agent.service
