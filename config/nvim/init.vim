@@ -27,6 +27,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mxw/vim-jsx'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'tomlion/vim-solidity'
+Plug 'blueshirts/darcula'
 
 
 " Plug 'OmniSharp/omnisharp-vim'
@@ -90,10 +91,8 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " colorscheme
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=light
-" colorscheme base16-apathy
-colorscheme base16-solarized-light
-" colorscheme base16-harmonic-dark
+set background=dark
+colorscheme darcula
 set termguicolors
 
 " code folding
