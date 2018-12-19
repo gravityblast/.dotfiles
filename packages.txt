@@ -23,3 +23,4 @@ xclip
 xfce4-screenshooter
 xorg-xbacklight
 zsh
+ttf-unifont
