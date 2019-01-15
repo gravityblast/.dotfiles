@@ -1,5 +1,5 @@
 source ~/.dotfiles/git/git.sh
-#source ~/.dotfiles/postgres.sh
+source ~/.dotfiles/postgres.sh
 source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
