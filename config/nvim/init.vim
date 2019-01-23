@@ -28,6 +28,7 @@ Plug 'mxw/vim-jsx'
 Plug 'reasonml-editor/vim-reason-plus'
 Plug 'tomlion/vim-solidity'
 Plug 'blueshirts/darcula'
+Plug 'tpope/vim-fireplace'
 
 
 " Plug 'OmniSharp/omnisharp-vim'
