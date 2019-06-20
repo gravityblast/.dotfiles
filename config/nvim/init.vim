@@ -91,9 +91,11 @@ set smartcase                   " ... unless they contain at least one capital l
 :nnoremap <CR> :nohlsearch<CR><CR>
 
 " colorscheme
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
-colorscheme darcula
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set background=light
+" colorscheme darcula
+" colorscheme base16-solarized-light
+colorscheme base16-solarized-light
 set termguicolors
 
 " code folding
@@ -214,3 +216,6 @@ let g:airline_theme='base16'
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
 
+" Ocaml
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
