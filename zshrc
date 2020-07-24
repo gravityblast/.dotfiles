@@ -9,6 +9,7 @@ source ~/.dotfiles/docker.sh
 source ~/.dotfiles/gpg.sh
 source ~/.dotfiles/geth.sh
 source ~/.dotfiles/fzf.sh
+source ~/.dotfiles/ruby.sh
 #source ~/.asdf/asdf.sh
 
 alias c="printf \"\\033c\""

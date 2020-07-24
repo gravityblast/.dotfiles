@@ -8,7 +8,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
@@ -22,14 +21,17 @@ Plug 'pilu/snipmate.vim'
 " Plug 'Shougo/denite.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'ElmCast/elm-vim'
-" Plug 'scrooloose/syntastic'
-Plug 'kchmck/vim-coffee-script'
-Plug 'mxw/vim-jsx'
-Plug 'reasonml-editor/vim-reason-plus'
+" Plug 'vim-syntastic/syntastic'
 Plug 'tomlion/vim-solidity'
-Plug 'blueshirts/darcula'
 Plug 'tpope/vim-fireplace'
+Plug 'rust-lang/rust.vim'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'zah/nim.vim'
 
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" typescript
+Plug 'Quramy/tsuquyomi' "typescript
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Plug 'OmniSharp/omnisharp-vim'
 " Plug 'prettier/vim-prettier', {
@@ -59,7 +61,10 @@ set nobackup
 set noswapfile
 
 filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete
+
 syntax enable
+
 let mapleader=","
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -92,9 +97,8 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " colorscheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=light
-" colorscheme darcula
-" colorscheme base16-solarized-light
+set background=dark
+" colorscheme PaperColor
 colorscheme base16-solarized-light
 set termguicolors
 
@@ -204,7 +208,13 @@ autocmd BufWritePre *.re execute 'ReasonPrettyPrint'
 " golang
 autocmd Filetype go setlocal noexpandtab
 autocmd Filetype go setlocal nolist
+
 let g:go_fmt_command = "goimports"
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " FZF
 nnoremap <C-p> :FZF<CR>
@@ -217,5 +227,8 @@ let g:airline_theme='base16'
 " let g:airline_powerline_fonts = 1
 
 " Ocaml
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
+" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+" execute "set rtp+=" . g:opamshare . "/merlin/vim"
+"
+" Rust
+let g:rustfmt_autosave = 1
