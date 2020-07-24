@@ -12,9 +12,13 @@
 [core]
   excludesfile = ~/.dotfiles/git/gitignore_global
 	editor = nvim
+	quotepath = false
+	commitGraph = true
 [push]
   default = simple
 [status]
 	showUntrackedFiles = all
 [commit]
 	gpgsign = true
+[gc]
+	writeCommitGraph = true

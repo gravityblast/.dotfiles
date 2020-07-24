@@ -2,4 +2,6 @@
 --ignore-dir=coverage
 --ignore-dir=tmp
 --ignore-dir=vcr_cassettes
+--ignore-dir=vendor
+--ignore-dir=node_modules
 
