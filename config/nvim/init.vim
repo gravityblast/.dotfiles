@@ -32,6 +32,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " typescript
 Plug 'Quramy/tsuquyomi' "typescript
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'peterhoeg/vim-qml'
 
 " Plug 'OmniSharp/omnisharp-vim'
 " Plug 'prettier/vim-prettier', {
@@ -100,6 +101,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 " colorscheme PaperColor
 colorscheme base16-solarized-light
+" colorscheme base16-oceanicnext
 set termguicolors
 
 " code folding
@@ -127,9 +129,10 @@ set scrolloff=5
 autocmd CompleteDone * pclose
 
 " Tab navigation
-nnoremap th :tabprev<CR>
-nnoremap tl :tabnext<CR>
-nnoremap tn :tabnew<CR>
+nnoremap tp :tabprev<CR>
+nnoremap tn :tabnext<CR>
+nnoremap tc :tabnew<CR>
+nnoremap td :tabclose<CR>
 
 " Nerdtree
 nmap <F2> :NERDTreeToggle<CR>
@@ -224,7 +227,8 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " Airline
 let g:airline_theme='base16'
 " let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Ocaml
 " let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
