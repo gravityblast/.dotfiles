@@ -43,7 +43,7 @@ Plug 'peterhoeg/vim-qml'
 
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 
@@ -100,7 +100,7 @@ set smartcase                   " ... unless they contain at least one capital l
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set background=dark
 " colorscheme PaperColor
-colorscheme base16-solarized-light
+colorscheme base16-solarized-dark
 " colorscheme base16-oceanicnext
 set termguicolors
 
@@ -162,8 +162,6 @@ if has('persistent_undo')      "check if your vim version supports it
   set undofile                 "turn on the feature
   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
 endif
-
-let g:ctrlp_working_path_mode = 'a'
 
 " Elm
 au FileType elm nmap <leader>m <Plug>(elm-make)
