@@ -4,4 +4,3 @@
 --ignore-dir=vcr_cassettes
 --ignore-dir=vendor
 --ignore-dir=node_modules
-
