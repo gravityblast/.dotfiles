@@ -7,7 +7,7 @@ Clone this repo into ~/.dotfiles, then add the following line to `.bash_profile`
 And in your ~/.gitconfig:
 
 	[include]
-		path = ~/.dotfiles/gitconfig
+		path = ~/.dotfiles/git/gitconfig
 
 ### Vim
 	git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
