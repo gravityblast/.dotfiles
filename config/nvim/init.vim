@@ -24,7 +24,6 @@ Plug 'ElmCast/elm-vim'
 " Plug 'vim-syntastic/syntastic'
 Plug 'tomlion/vim-solidity'
 Plug 'tpope/vim-fireplace'
-Plug 'rust-lang/rust.vim'
 " Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'zah/nim.vim'
 
@@ -33,12 +32,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Quramy/tsuquyomi' "typescript
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'peterhoeg/vim-qml'
+Plug 'prettier/vim-prettier'
 
 " Plug 'OmniSharp/omnisharp-vim'
-" Plug 'prettier/vim-prettier', {
-" 	\ 'do': 'yarn install',
-" 	\ 'for': ['javascript', 'typescript', 'json', 'graphql'] }
-
 " Plug 'w0rp/ale'
 
 Plug 'fatih/vim-go'
@@ -52,8 +48,16 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'chriskempson/base16-vim'
-Plug 'nightsense/vimspectr'
+Plug 'akkerman/vim-jasmine-fold'
 
+Plug 'neovim/nvim-lspconfig'
+
+" rust
+Plug 'rust-lang/rust.vim'
+Plug 'simrat39/rust-tools.nvim'
+
+" Always load the vim-devicons as the very last one.
+" Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -98,10 +102,17 @@ set smartcase                   " ... unless they contain at least one capital l
 
 " colorscheme
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
-" colorscheme PaperColor
-colorscheme base16-solarized-dark
-" colorscheme base16-oceanicnext
+
+let hr = str2nr(strftime('%H'))
+if hr <= 6 || hr > 18
+    set background=dark
+    colorscheme base16-solarized-dark
+else
+    set background=light
+    colorscheme base16-solarized-light
+endif
+
+
 set termguicolors
 
 " code folding
@@ -112,7 +123,6 @@ set ruler
 set cursorline
 set number
 
-" tab completion for files
 set wildmenu
 set wildmode=longest:full,full
 set wildignore+=*/target/*,*/tmp/*,*.so,*.swp,*.zip,*/coverage/*,*/vcr_cassettes/*,Godeps/_workspace/,*/node_modules/*,*/deps/*
@@ -234,3 +244,11 @@ let g:airline#extensions#tabline#enabled = 1
 "
 " Rust
 let g:rustfmt_autosave = 1
+
+" Prettier
+" let g:neoformat_try_node_exe = 1
+
+" Solidity
+au Filetype solidity set tabstop=4 softtabstop=4 shiftwidth=4
+
+
