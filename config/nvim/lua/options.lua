@@ -1,4 +1,7 @@
-vim.g.mapleader = ","
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
 vim.o.showcmd = true -- display incomplete commands
 vim.o.encoding = "utf-8"
 vim.o.mouse = "nvi"

@@ -1,5 +1,5 @@
-require "plugins"
 require "options"
+require "plugins"
 require "mappings"
 require "auto"
 require "lsp"
