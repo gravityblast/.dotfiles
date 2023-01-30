@@ -1,4 +1,4 @@
-function renameCurrentFile()
+function RenameCurrentFile()
   local old_name = vim.fn.expand('%')
   vim.ui.input({ prompt = 'New file name: ', default = vim.fn.expand('%') }, function(new_name)
     if new_name ~= nil and new_name ~= '' and new_name ~= old_name then
@@ -11,7 +11,7 @@ end
 
 local set = vim.keymap.set
 
-set({ 'n', 'v' }, '<Leader>n', '<Cmd>lua renameCurrentFile()<CR>')
+set({ 'n', 'v' }, '<Leader>n', '<Cmd>lua RenameCurrentFile()<CR>')
 set("n", "<CR>", ":nohlsearch<CR><CR>")
 
 set("n", "tp", ":tabprev<CR>")
