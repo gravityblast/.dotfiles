@@ -31,11 +31,12 @@ local on_attach = function(client, bufnr)
 
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', '<Leader>h', vim.lsp.buf.hover, bufopts)
   vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", bufopts)
-  vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<cr>", bufopts)
+  vim.keymap.set('n', '<Leader>d', function() vim.diagnostic.open_float({ border = "double" }, { focus = false }) end,
+    bufopts);
 
   if client.supports_method("textDocument/formatting") then
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

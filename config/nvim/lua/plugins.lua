@@ -26,6 +26,7 @@ return require('packer').startup(function(use)
 
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use 'tiagovla/scope.nvim'
+  use "lukas-reineke/indent-blankline.nvim"
 
   use {
     'nvim-tree/nvim-tree.lua',
