@@ -28,7 +28,7 @@ vim.cmd("syntax enable")
 -- turns on "detection", "plugin" and "indent"
 vim.cmd("filetype plugin indent on")
 vim.opt.omnifunc = "syntaxcomplete#Complete"
--- set completeopt-=preview
+-- vim.opt.completeopt = "menuone,noselect"
 -- set complete-=i
 vim.cmd("autocmd CompleteDone * pclose")
 
@@ -46,7 +46,24 @@ vim.o.smartcase = true -- " ... unless they contain at least one capital letter
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR=1")
 
 -- code folding
-vim.opt.foldenable = false
+-- vim.opt.foldenable = false
+-- vim.o.foldcolumn = '1'
+-- vim.o.foldlevel = 99
+-- vim.o.foldlevelstart = 99
+-- vim.o.foldenable = true
+-- vim.o.foldmethod = "expr"
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.opt.foldenable = false
+-- vim.o.statuscolumn = "%=%l%s%C"
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+
+
+
+
 
 --- gui
 vim.o.ruler = true

@@ -14,12 +14,14 @@ require 'nvim-treesitter.configs'.setup {
 }
 
 local lsp_formatting = function(bufnr)
-  vim.lsp.buf.format({
-    filter = function(client)
-      return client.name ~= "tsserver"
-    end,
-    bufnr = bufnr,
-  })
+  if not vim.g.disable_formatting then
+    vim.lsp.buf.format({
+      filter = function(client)
+        return client.name ~= "tsserver"
+      end,
+      bufnr = bufnr,
+    })
+  end
 end
 
 -- if you want to set up formatting on save, you can use this as a callback
