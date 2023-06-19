@@ -85,4 +85,7 @@ return require('packer').startup(function(use)
       }
     end
   }
+
+  use 'ray-x/go.nvim'
+  require('go').setup()
 end)
