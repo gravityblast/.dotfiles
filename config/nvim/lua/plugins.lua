@@ -60,8 +60,9 @@ return require('packer').startup(function(use)
     end,
   }
 
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/vim-vsnip-integ'
+  -- use 'hrsh7th/vim-vsnip'
+  -- use 'hrsh7th/vim-vsnip-integ'
+  use 'gravityblast/snipmate.vim'
 
   use 'simrat39/symbols-outline.nvim'
 
