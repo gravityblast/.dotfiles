@@ -65,15 +65,34 @@ null_ls.setup({
 
 local lsp = require("lspconfig");
 
+lsp.gopls.setup{}
 lsp.tsserver.setup { on_attach = on_attach }
 lsp.rust_analyzer.setup { on_attach = on_attach }
-lsp.sumneko_lua.setup {
-  on_attach = on_attach,
+
+lsp.lua_ls.setup {
   settings = {
     Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+      },
       diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+}
+
+lsp.elixirls.setup{
+  cmd = { vim.fn.expand("$HOME/bin/elixir-ls/language_server.sh")  };
+  on_attach = on_attach
 }

@@ -46,7 +46,7 @@ vim.o.smartcase = true -- " ... unless they contain at least one capital letter
 vim.cmd("let $NVIM_TUI_ENABLE_TRUE_COLOR=1")
 
 -- code folding
--- vim.opt.foldenable = false
+vim.opt.foldenable = false
 -- vim.o.foldcolumn = '1'
 -- vim.o.foldlevel = 99
 -- vim.o.foldlevelstart = 99
