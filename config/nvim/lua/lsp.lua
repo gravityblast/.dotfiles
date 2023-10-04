@@ -1,3 +1,6 @@
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "lua", "go", "rust", "vim", "solidity",
@@ -5,7 +8,8 @@ require 'nvim-treesitter.configs'.setup {
     "tsx", "clojure"
   },
 
-  sync_install = false,
+  sync_install = true,
+  auto_install = true,
 
   highlight = {
     enable = true,
@@ -60,12 +64,13 @@ local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettier,
-  },
+  }
 })
 
 local lsp = require("lspconfig");
+local configs = require 'lspconfig.configs'
 
-lsp.gopls.setup{}
+lsp.gopls.setup {}
 lsp.tsserver.setup { on_attach = on_attach }
 lsp.rust_analyzer.setup { on_attach = on_attach }
 
@@ -78,7 +83,7 @@ lsp.lua_ls.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = { 'vim' },
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
@@ -90,9 +95,21 @@ lsp.lua_ls.setup {
       },
     },
   },
-}
-
-lsp.elixirls.setup{
-  cmd = { vim.fn.expand("$HOME/bin/elixir-ls/language_server.sh")  };
   on_attach = on_attach
 }
+
+lsp.elixirls.setup {
+  cmd = { vim.fn.expand("$HOME/bin/elixir-ls/language_server.sh") },
+  on_attach = on_attach
+}
+
+configs.solidity = {
+  default_config = {
+    cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
+    filetypes = { 'solidity' },
+    root_dir = lsp.util.find_git_ancestor,
+    single_file_support = true,
+  },
+}
+
+lsp.solidity.setup { on_attach = on_attach }

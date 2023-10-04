@@ -59,10 +59,12 @@ vim.opt.termguicolors = true
 require("bufferline").setup {}
 require("scope").setup()
 
-require("indent_blankline").setup {
+require("ibl").setup {
   -- for example, context is off by default, use this to turn it on
-  char = '┊',
-  show_trailing_blankline_indent = false,
+  indent = {
+    char = '┊',
+  },
+  -- show_trailing_blankline_indent = false,
   -- show_current_context = true,
   -- show_current_context_start = true,
   -- space_char_blankline = " ",

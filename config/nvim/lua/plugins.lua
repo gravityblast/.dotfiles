@@ -15,18 +15,23 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use 'neovim/nvim-lspconfig'
+
   use 'mhinz/vim-startify'
 
   use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
   use 'tpope/vim-endwise'
   use 'tpope/vim-surround'
-  use 'neovim/nvim-lspconfig'
   use 'mileszs/ack.vim'
 
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
   use 'tiagovla/scope.nvim'
   use "lukas-reineke/indent-blankline.nvim"
+
+  -- use "~/dev/nvim-test-plugin"
 
   use {
     'nvim-tree/nvim-tree.lua',
