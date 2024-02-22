@@ -38,7 +38,7 @@ return require('packer').startup(function(use)
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    tag = 'nightly'                  -- optional, updated every week. (see issue #1193)
   }
 
   use 'jose-elias-alvarez/null-ls.nvim'
@@ -79,18 +79,11 @@ return require('packer').startup(function(use)
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 
   use 'prettier/vim-prettier'
-
-  use {
-    "folke/zen-mode.nvim",
-    config = function()
-      require("zen-mode").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
-    end
-  }
+  use 'Certora/vim-setup'
+  use 'github/copilot.vim'
 
   use 'ray-x/go.nvim'
   require('go').setup()
+
+  use 'tomlion/vim-solidity';
 end)

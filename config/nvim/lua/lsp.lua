@@ -5,7 +5,7 @@ require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "lua", "go", "rust", "vim", "solidity",
     "css", "html", "javascript", "typescript",
-    "tsx", "clojure"
+    "tsx", "clojure", "json", "yaml", "bash"
   },
 
   sync_install = true,
