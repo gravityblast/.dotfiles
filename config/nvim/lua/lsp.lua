@@ -21,7 +21,8 @@ local lsp_formatting = function(bufnr)
   if not vim.g.disable_formatting then
     vim.lsp.buf.format({
       filter = function(client)
-        return client.name ~= "tsserver"
+        return client.name ~= "tsserver" and
+            client.name ~= "solidity"
       end,
       bufnr = bufnr,
     })
