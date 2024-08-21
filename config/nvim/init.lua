@@ -1,5 +1,5 @@
 require "options"
-require "plugins"
+require "lazy_setup"
 require "mappings"
 require "auto"
 require "lsp"

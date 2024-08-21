@@ -71,7 +71,7 @@ null_ls.setup({
 local lsp = require("lspconfig");
 local configs = require 'lspconfig.configs'
 
-lsp.gopls.setup {}
+lsp.gopls.setup { on_attach = on_attach }
 lsp.tsserver.setup { on_attach = on_attach }
 lsp.rust_analyzer.setup { on_attach = on_attach }
 

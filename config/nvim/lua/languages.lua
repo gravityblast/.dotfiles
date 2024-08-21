@@ -2,24 +2,39 @@
 vim.cmd([[
   autocmd Filetype go setlocal noexpandtab
   autocmd Filetype go setlocal nolist
-
-  let g:go_fmt_command = "goimports"
-  let g:go_highlight_structs = 1
-  let g:go_highlight_methods = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_operators = 1
-  let g:go_highlight_build_constraints = 1
 ]])
 
-local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+-- local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*.go",
+--   callback = function()
+--     require('go.format').goimport()
+--   end,
+--   group = format_sync_grp,
+-- })
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
-    require('go.format').goimport()
-  end,
-  group = format_sync_grp,
+    local params = vim.lsp.util.make_range_params()
+    params.context = { only = { "source.organizeImports" } }
+    -- buf_request_sync defaults to a 1000ms timeout. Depending on your
+    -- machine and codebase, you may want longer. Add an additional
+    -- argument after params if you find that you have to write the file
+    -- twice for changes to be saved.
+    -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+    for cid, res in pairs(result or {}) do
+      for _, r in pairs(res.result or {}) do
+        if r.edit then
+          local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+          vim.lsp.util.apply_workspace_edit(r.edit, enc)
+        end
+      end
+    end
+    vim.lsp.buf.format({ async = false })
+  end
 })
-
 
 -- Solidity
 vim.cmd([[

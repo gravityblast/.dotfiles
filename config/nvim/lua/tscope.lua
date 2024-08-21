@@ -1,8 +1,23 @@
 local telescope = require("telescope")
-telescope.setup();
+local builtin = require('telescope.builtin')
+
+telescope.setup {
+  defaults = {
+    file_ignore_patterns = { "deployments" },
+    layout_strategy = 'vertical',
+    layout_config = {
+      vertical = {
+        width = 0.99,
+        height = 0.99
+      }
+    },
+  },
+};
+
 telescope.load_extension("fzf")
 
-vim.keymap.set('n', '<Leader>ls', "<cmd>Telescope buffers<cr>")
-vim.keymap.set('n', '<Leader>f', "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "<Leader>g", "<cmd>Telescope live_grep<cr>")
-vim.keymap.set("n", "<Leader> ", "<cmd>Telescope keymaps<cr>")
+vim.keymap.set('n', '<leader>ls', builtin.buffers, {})
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
+vim.keymap.set('n', '<leader> ', builtin.keymaps, {})
+vim.keymap.set('n', '<leader>ht', builtin.help_tags, {})
