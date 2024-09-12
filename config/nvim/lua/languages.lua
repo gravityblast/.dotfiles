@@ -40,21 +40,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.cmd([[
   au Filetype solidity set tabstop=4 softtabstop=4 shiftwidth=4
 ]])
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.sol",
-  callback = function()
-    local file_path = vim.fn.expand("%:p")
-    local cmd = { "forge", "fmt", file_path }
-
-    vim.fn.jobstart(cmd, {
-      on_exit = function(_, return_val)
-        if return_val == 0 then
-          vim.cmd("edit!")
-        else
-          print("Error formatting file with forge fmt.")
-        end
-      end,
-    })
-  end
-})

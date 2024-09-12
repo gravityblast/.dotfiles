@@ -18,7 +18,7 @@
   default = simple
 [status]
 	showUntrackedFiles = all
-# [commit]
-# 	gpgsign = true
+[commit]
+ 	gpgsign = true
 [gc]
 	writeCommitGraph = true

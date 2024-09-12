@@ -65,11 +65,12 @@ local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.forge_fmt,
   }
 })
 
 local lsp = require("lspconfig");
-local configs = require 'lspconfig.configs'
+local configs = require('lspconfig.configs')
 
 lsp.gopls.setup { on_attach = on_attach }
 lsp.tsserver.setup { on_attach = on_attach }
@@ -114,3 +115,16 @@ configs.solidity = {
 }
 
 lsp.solidity.setup { on_attach = on_attach }
+
+lsp.pylsp.setup { on_attach = on_attach }
+
+
+lsp.nim_langserver.setup {
+  settings = {
+    nim = {
+      nimsuggestPath = "/opt/homebrew/bin/nimsuggest"
+    }
+  }
+}
+
+lsp.cvl.setup { on_attach = on_attach }

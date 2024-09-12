@@ -65,8 +65,13 @@ return {
 
   { 'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani42/nvim-web-devicons', opt = true } },
   'prettier/vim-prettier',
-  'Certora/vim-setup',
+  'gravityblast/certora-vim',
   'github/copilot.vim',
 
   'tomlion/vim-solidity',
+
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {},
+  }
 }
