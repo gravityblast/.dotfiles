@@ -1,6 +1,19 @@
 return {
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  {
+    "mason-org/mason.nvim",
+    opts = {}
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "gopls", "solidity_ls_nomicfoundation" },
+      automatic_enable = false,
+    },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
   'neovim/nvim-lspconfig',
   'tpope/vim-fugitive',
   'tpope/vim-commentary',
@@ -23,7 +36,7 @@ return {
     },
   },
 
-  'jose-elias-alvarez/null-ls.nvim',
+  'nvimtools/none-ls.nvim',
 
   {
     "utilyre/barbecue.nvim",
@@ -54,7 +67,24 @@ return {
   { 'nvim-telescope/telescope.nvim',            tag = '0.1.7',    dependencies = { { 'nvim-lua/plenary.nvim' } } },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'catppuccin/nvim',                          as = 'catppuccin' },
-  'navarasu/onedark.nvim',
+  {
+    'navarasu/onedark.nvim',
+
+    opts = {
+      style = 'warm',
+      toggle_style_key = "<Leader>c",
+      code_style = {
+        -- functions = "bold",
+      },
+      colors = {
+        purple = "#c678dd",
+      },
+
+    },
+    config = function()
+      -- require('onedark').load()
+    end
+  },
 
   -- can we remove it if we use telescope?
   {
@@ -68,10 +98,18 @@ return {
   'gravityblast/certora-vim',
   'github/copilot.vim',
 
-  'tomlion/vim-solidity',
+  -- 'tomlion/vim-solidity',
 
   {
     'MeanderingProgrammer/render-markdown.nvim',
-    opts = {},
+    opts = {
+      file_types = { "markdown", "Avante" },
+    },
+    ft = { "markdown", "Avante" },
+  },
+
+  {
+    "ziglang/zig",
+    ft = "zig"
   }
 }

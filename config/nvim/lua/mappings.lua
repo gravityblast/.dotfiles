@@ -18,10 +18,12 @@ set("n", "tp", ":tabprev<CR>")
 set("n", "tn", ":tabnext<CR>")
 set("n", "tc", ":tabnew<CR>")
 set("n", "td", ":tabclose<CR>")
+set("n", "ts", ":tab split<CR>")
 
 set("n", "<F2>", ":NvimTreeToggle<CR>")
 set("n", "R", ":NvimTreeRefresh<CR>")
 set("n", "<F3>", ":SymbolsOutline<CR>")
 set("n", "<C-p>", ":FZF<CR>")
 
-vim.cmd([[command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)]])
+vim.cmd(
+  [[command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)]])

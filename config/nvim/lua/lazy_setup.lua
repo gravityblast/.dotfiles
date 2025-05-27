@@ -1,6 +1,6 @@
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local lazy_commit = "6fdd904ee45b66d933c5d2f72bcec337e13744f8"
+local lazy_commit = "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   print("Cloning lazy.nvim...")

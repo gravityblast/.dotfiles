@@ -31,9 +31,10 @@ end
 
 -- SetColorSchemeBasedOnTime()
 -- NextTheme()
+-- vim.keymap.set("n", "<Leader>c", ":lua NextTheme()<CR>")
 
 require('onedark').setup {
-  style = 'deep',
+  style = 'warmer',
   toggle_style_key = "<Leader>c",
   code_style = {
     -- functions = "bold",
@@ -43,17 +44,7 @@ require('onedark').setup {
   },
 
 }
-require('onedark').load()
-
-
--- vim.keymap.set("n", "<Leader>c", ":lua NextTheme()<CR>")
-
-
-require 'lualine'.setup({
-  options = {
-    theme = 'onedark'
-  },
-})
+vim.o.background = "light"
 
 vim.opt.termguicolors = true
 require("bufferline").setup {}

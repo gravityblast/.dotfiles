@@ -5,7 +5,8 @@ require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "lua", "go", "rust", "vim", "solidity",
     "css", "html", "javascript", "typescript",
-    "tsx", "clojure", "json", "yaml", "bash"
+    "tsx", "json", "yaml", "bash",
+    "ruby"
   },
 
   sync_install = true,
@@ -21,7 +22,7 @@ local lsp_formatting = function(bufnr)
   if not vim.g.disable_formatting then
     vim.lsp.buf.format({
       filter = function(client)
-        return client.name ~= "tsserver" and
+        return client.name ~= "ts_ls" and
             client.name ~= "solidity"
       end,
       bufnr = bufnr,
@@ -73,7 +74,7 @@ local lsp = require("lspconfig");
 local configs = require('lspconfig.configs')
 
 lsp.gopls.setup { on_attach = on_attach }
-lsp.tsserver.setup { on_attach = on_attach }
+lsp.ts_ls.setup { on_attach = on_attach }
 lsp.rust_analyzer.setup { on_attach = on_attach }
 
 lsp.lua_ls.setup {
@@ -105,7 +106,9 @@ lsp.elixirls.setup {
   on_attach = on_attach
 }
 
-configs.solidity = {
+lsp.ruby_lsp.setup { on_attach = on_attach }
+
+configs.solidity_ls_nomicfoundation = {
   default_config = {
     cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
     filetypes = { 'solidity' },
@@ -114,7 +117,7 @@ configs.solidity = {
   },
 }
 
-lsp.solidity.setup { on_attach = on_attach }
+lsp.solidity_ls_nomicfoundation.setup { on_attach = on_attach }
 
 lsp.pylsp.setup { on_attach = on_attach }
 
@@ -126,5 +129,7 @@ lsp.nim_langserver.setup {
     }
   }
 }
+
+lsp.zls.setup { on_attach = on_attach }
 
 lsp.cvl.setup { on_attach = on_attach }

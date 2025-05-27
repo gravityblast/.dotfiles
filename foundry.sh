@@ -7,6 +7,7 @@ alias cast-call-optimism="cast call --rpc-url https://mainnet.optimism.io"
 alias cast-call-zksync-goerli="cast call --rpc-url https://testnet.era.zksync.dev"
 alias cast-call-zksync-era="cast call --rpc-url https://mainnet.era.zksync.io"
 alias cast-call-sepolia="cast call --rpc-url https://rpc2.sepolia.org"
+alias cast-call-base="cast call --rpc-url https://mainnet.base.org"
 
 function cast-call-mainnet() {
   cast call --rpc-url https://mainnet.infura.io/v3/$INFURA_API_KEY "$@"
