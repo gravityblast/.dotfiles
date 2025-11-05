@@ -1,12 +1,23 @@
 return {
   {
+    name = "foo",
+    dir = "~/dev/nvim-foo",
+    dev = true,
+    config = function()
+      require("foo")
+    end
+  },
+  {
     "mason-org/mason.nvim",
     opts = {}
   },
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
-      ensure_installed = { "lua_ls", "rust_analyzer", "ts_ls", "gopls", "solidity_ls_nomicfoundation" },
+      ensure_installed = {
+        "lua_ls", "rust_analyzer", "ts_ls", "gopls",
+        "solidity_ls_nomicfoundation",
+      },
       automatic_enable = false,
     },
     dependencies = {
@@ -69,20 +80,13 @@ return {
   { 'catppuccin/nvim',                          as = 'catppuccin' },
   {
     'navarasu/onedark.nvim',
-
-    opts = {
-      style = 'warm',
-      toggle_style_key = "<Leader>c",
-      code_style = {
-        -- functions = "bold",
-      },
-      colors = {
-        purple = "#c678dd",
-      },
-
-    },
+    priority = 1000,
     config = function()
-      -- require('onedark').load()
+      require('onedark').setup {
+        style = 'dark'
+      }
+
+      require('onedark').load()
     end
   },
 
@@ -99,17 +103,4 @@ return {
   'github/copilot.vim',
 
   -- 'tomlion/vim-solidity',
-
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    opts = {
-      file_types = { "markdown", "Avante" },
-    },
-    ft = { "markdown", "Avante" },
-  },
-
-  {
-    "ziglang/zig",
-    ft = "zig"
-  }
 }

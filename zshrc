@@ -1,10 +1,10 @@
 source ~/.dotfiles/git/git.sh
-source ~/.dotfiles/postgres.sh
-source ~/.dotfiles/node.sh
+# source ~/.dotfiles/postgres.sh
+# source ~/.dotfiles/node.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
 source ~/.dotfiles/go.sh
-# source ~/.dotfiles/rvm.sh
+source ~/.dotfiles/mise.sh
 source ~/.dotfiles/docker.sh
 source ~/.dotfiles/gpg.sh
 source ~/.dotfiles/geth.sh

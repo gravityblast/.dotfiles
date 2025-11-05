@@ -67,7 +67,9 @@ null_ls.setup({
   sources = {
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.forge_fmt,
-  }
+  },
+  log_level = "debug",
+  on_attach = on_attach,
 })
 
 local lsp = require("lspconfig");
@@ -116,7 +118,6 @@ configs.solidity_ls_nomicfoundation = {
     single_file_support = true,
   },
 }
-
 lsp.solidity_ls_nomicfoundation.setup { on_attach = on_attach }
 
 lsp.pylsp.setup { on_attach = on_attach }
@@ -132,4 +133,4 @@ lsp.nim_langserver.setup {
 
 lsp.zls.setup { on_attach = on_attach }
 
-lsp.cvl.setup { on_attach = on_attach }
+-- lsp.cvl.setup { on_attach = on_attach }

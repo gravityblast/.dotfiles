@@ -33,19 +33,7 @@ end
 -- NextTheme()
 -- vim.keymap.set("n", "<Leader>c", ":lua NextTheme()<CR>")
 
-require('onedark').setup {
-  style = 'warmer',
-  toggle_style_key = "<Leader>c",
-  code_style = {
-    -- functions = "bold",
-  },
-  colors = {
-    purple = "#c678dd",
-  },
-
-}
 vim.o.background = "light"
-
 vim.opt.termguicolors = true
 require("bufferline").setup {}
 require("scope").setup()
