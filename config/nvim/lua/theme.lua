@@ -13,10 +13,12 @@ function NextTheme()
 end
 
 function Light()
-  vim.cmd("colorscheme catppuccin-frappe")
+  vim.o.background = "light"
+  vim.cmd("colorscheme catppuccin-latte")
 end
 
 function Dark()
+  vim.o.background = "dark"
   vim.cmd("colorscheme catppuccin")
 end
 
@@ -29,11 +31,9 @@ function SetColorSchemeBasedOnTime()
   end
 end
 
--- SetColorSchemeBasedOnTime()
--- NextTheme()
--- vim.keymap.set("n", "<Leader>c", ":lua NextTheme()<CR>")
+SetColorSchemeBasedOnTime()
+vim.keymap.set("n", "<Leader>c", ":lua NextTheme()<CR>")
 
-vim.o.background = "light"
 vim.opt.termguicolors = true
 require("bufferline").setup {}
 require("scope").setup()

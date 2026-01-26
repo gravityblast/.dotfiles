@@ -19,6 +19,6 @@
 [status]
 	showUntrackedFiles = all
 [commit]
- 	gpgsign = true
+ 	gpgsign = false
 [gc]
 	writeCommitGraph = true

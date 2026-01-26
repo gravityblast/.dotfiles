@@ -28,7 +28,7 @@ return {
   'neovim/nvim-lspconfig',
   'tpope/vim-fugitive',
   'tpope/vim-commentary',
-  'tpope/vim-endwise',
+  -- 'tpope/vim-endwise',
   'tpope/vim-surround',
   'mileszs/ack.vim',
   {
@@ -78,18 +78,6 @@ return {
   { 'nvim-telescope/telescope.nvim',            tag = '0.1.7',    dependencies = { { 'nvim-lua/plenary.nvim' } } },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   { 'catppuccin/nvim',                          as = 'catppuccin' },
-  {
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      require('onedark').setup {
-        style = 'dark'
-      }
-
-      require('onedark').load()
-    end
-  },
-
   -- can we remove it if we use telescope?
   {
     'junegunn/fzf.vim',

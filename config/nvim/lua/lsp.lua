@@ -77,7 +77,9 @@ local configs = require('lspconfig.configs')
 
 lsp.gopls.setup { on_attach = on_attach }
 lsp.ts_ls.setup { on_attach = on_attach }
-lsp.rust_analyzer.setup { on_attach = on_attach }
+
+-- rust setup already done by rustaceanvim
+-- lsp.rust_analyzer.setup { on_attach = on_attach }
 
 lsp.lua_ls.setup {
   settings = {
