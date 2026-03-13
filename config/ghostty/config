@@ -1,4 +1,4 @@
-theme = Catppuccin Latte
+theme = Catppuccin Mocha
 
 font-family = JetBrainsMono Nerd Font Mono
 # font-family = Meslo LG L Regular Nerd Font Complete Mono
@@ -12,3 +12,7 @@ shell-integration-features = no-cursor
 
 maximize = true
 
+
+# Tabs
+keybind = super+shift+left_bracket=move_tab:-1
+keybind = super+shift+right_bracket=move_tab:+1

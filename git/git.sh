@@ -1,16 +1,7 @@
-if [ -n `which git` ]; then
-  alias g='git'
-fi
-
-git_prompt ()
-{
-	if ! git rev-parse --git-dir > /dev/null 2>&1; then
-    return 0
-	fi
-
-	git_branch=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
-
-	if [ -n "$git_branch" ]; then
-		echo "($git_branch)"
-	fi
+ghopen() {
+  local url
+  url=$(git remote get-url origin 2>/dev/null) || { echo "Not a git repo or no origin remote"; return 1; }
+  url=${url%.git}
+  url=${url/git@github.com:/https://github.com/}
+  open "$url"
 }

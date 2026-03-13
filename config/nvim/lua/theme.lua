@@ -31,7 +31,8 @@ function SetColorSchemeBasedOnTime()
   end
 end
 
-SetColorSchemeBasedOnTime()
+-- SetColorSchemeBasedOnTime()
+Dark()
 vim.keymap.set("n", "<Leader>c", ":lua NextTheme()<CR>")
 
 vim.opt.termguicolors = true

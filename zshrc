@@ -1,5 +1,4 @@
 source ~/.dotfiles/git/git.sh
-# source ~/.dotfiles/postgres.sh
 source ~/.dotfiles/bundler.sh
 source ~/.dotfiles/utils.sh
 source ~/.dotfiles/go.sh
@@ -9,7 +8,6 @@ source ~/.dotfiles/gpg.sh
 source ~/.dotfiles/geth.sh
 source ~/.dotfiles/fzf.sh
 source ~/.dotfiles/ruby.sh
-#source ~/.asdf/asdf.sh
 source ~/.dotfiles/ethereum.sh
 source ~/.dotfiles/foundry.sh
 source ~/.dotfiles/elixir.sh
@@ -104,4 +102,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias l="colorls -lah --light"
+alias l="colorls -lah --dark"
+alias tree="colorls --tree --dark"
